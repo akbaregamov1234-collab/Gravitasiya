@@ -1,0 +1,58 @@
+:root{
+  --paper:#e8efe9;--ink:#10303a;--ink2:#3d5f68;--card:#f7fbf8;--coral:#e8553d;
+  --f:'Bricolage Grotesque',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:var(--paper);color:var(--ink);font:500 14px/1.4 var(--f);overflow:hidden}
+canvas{position:fixed;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;display:block}
+
+.brand{position:fixed;left:20px;top:16px;pointer-events:none}
+.brand h1{font:800 clamp(22px,3.4vw,38px)/.98 var(--f);letter-spacing:-.03em}
+.brand p{color:var(--ink2);max-width:34ch;margin-top:8px}
+
+.card{
+  position:fixed;background:var(--card);border:2px solid var(--ink);
+  border-radius:14px;box-shadow:5px 5px 0 var(--ink);padding:12px 14px;
+}
+.stats{right:20px;top:16px;display:grid;grid-template-columns:auto auto;gap:2px 20px;min-width:170px}
+.sel dl{display:grid;grid-template-columns:auto auto;gap:2px 20px}
+dt{color:var(--ink2)}
+dd{font-weight:800;text-align:right;font-variant-numeric:tabular-nums}
+
+.sel{right:20px;top:150px;width:230px}
+.sel h2{font:800 18px var(--f);margin-bottom:8px}
+.sel[hidden]{display:none}
+.btns{display:flex;gap:8px;margin-top:12px}
+.btns button{flex:1}
+
+.dock{
+  left:50%;bottom:18px;transform:translateX(-50%);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;
+  width:max-content;max-width:calc(100vw - 24px);
+}
+.grp{display:flex;gap:6px;flex-wrap:wrap}
+label{display:flex;align-items:center;gap:8px;font-weight:600}
+output{min-width:3.2ch;font-weight:800;font-variant-numeric:tabular-nums}
+input[type=range]{width:96px;accent-color:var(--coral)}
+input[type=checkbox]{accent-color:var(--coral);width:16px;height:16px}
+
+button{
+  font:700 13px var(--f);color:var(--ink);background:var(--card);
+  border:2px solid var(--ink);border-radius:10px;padding:7px 12px;cursor:pointer;
+  transition:transform .12s,box-shadow .12s;
+}
+button:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--ink)}
+button:active{transform:none;box-shadow:none}
+button.solid{background:var(--ink);color:var(--paper)}
+button.on{background:var(--coral);color:#fff}
+button.warn{color:var(--coral)}
+:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+
+@media (max-width:760px){
+  .brand p{display:none}
+  .stats{top:auto;bottom:210px;right:12px;font-size:12px}
+  .sel{top:12px;right:12px;width:190px}
+  .dock{bottom:10px;gap:8px 10px}
+  input[type=range]{width:70px}
+}

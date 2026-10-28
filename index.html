@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gravitatsiya Laboratoriyasi</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<canvas id="cv"></canvas>
+
+<header class="brand">
+  <h1>Gravitatsiya<br>Laboratoriyasi</h1>
+  <p>Bo'sh joyga bosing: jism paydo bo'ladi. Sudrab qo'yib yuborsangiz, unga tezlik beriladi.</p>
+</header>
+
+<dl class="card stats">
+  <dt>Jismlar</dt><dd id="sN">0</dd>
+  <dt>Vaqt</dt><dd id="sT">0</dd>
+  <dt>Energiya</dt><dd id="sE">0</dd>
+  <dt>Og'ish</dt><dd id="sD">—</dd>
+</dl>
+
+<section id="sel" class="card sel" hidden>
+  <h2 id="selName"></h2>
+  <dl>
+    <dt>Massa</dt><dd id="selM"></dd>
+    <dt>Tezlik</dt><dd id="selV"></dd>
+    <dt>Markazgacha</dt><dd id="selD"></dd>
+  </dl>
+  <div class="btns">
+    <button id="fol">Kuzatish</button>
+    <button id="del" class="warn">O'chirish</button>
+  </div>
+</section>
+
+<nav class="card dock">
+  <button id="play" class="solid">Pauza</button>
+  <label>Tezlik <input id="speed" type="range" min="1" max="24" value="4"><output id="spOut">×1</output></label>
+  <label>Yangi massa <input id="mass" type="range" min="0" max="5" value="2"><output id="mOut">60</output></label>
+  <div class="grp">
+    <button data-p="solar">Quyosh tizimi</button>
+    <button data-p="binary">Qo'sh yulduz</button>
+    <button data-p="figure8">Sakkiz</button>
+    <button data-p="cluster">To'da</button>
+  </div>
+  <label class="ck"><input id="oTr" type="checkbox" checked> Iz</label>
+  <label class="ck"><input id="oPr" type="checkbox" checked> Bashorat</label>
+  <label class="ck"><input id="oGr" type="checkbox" checked> To'r</label>
+  <button id="clr">Tozalash</button>
+  <button id="shot">Rasm</button>
+</nav>
+
+<script src="./script.js"></script>
+</body>
+</html>
